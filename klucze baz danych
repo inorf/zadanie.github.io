@@ -1,0 +1,14 @@
+Klucz podstawowy jest numerem wiersza, który jednoznacznie identyfikuje obiekt
+(np. znajomego czy firmę) w tabeli. Jest wyjątkowo ważnym elementem w każdej tabeli 
+i jego brak przy korzystaniu z bazy danych może spowodować wystąpienie różnych błędów. 
+Funkcję klucza podstawowego może pełnić dowolna kolumna (a nawet zbiór kilku kolumn) 
+tabeli, o ile dane przechowywane w tej kolumnie są niepowtarzalne. Dopóki w tabeli Znajomi 
+nie znajdują się informacje o kilku osobach noszących to samo nazwisko, kluczem 
+podstawowym tej tabeli może być kolumna Nazwisko. Nie możemy jednak wykluczyć tego,
+że kiedyś dopiszemy do tabeli kolejną osobę o nazwisku Nowak, zatem nie powinniśmy 
+wybierać naszej kolumny na klucz podstawowy tabeli.
+Tabela może mieć tylko jeden klucz podstawowy. Przyjmujemy, że kluczem podstawowym 
+każdej tabeli powinna być pojedyncza kolumna.
+Chociaż jako klucz podstawowy może zostać określona kolumna innego typu niż 
+Autonumerowanie, to dla naszych potrzeb przyjmujemy, że klucz podstawowy każdej 
+tabeli powinien być kolumną typu Autonumerowanie
