@@ -1,34 +1,36 @@
-#include <cstdlib>
+
 #include <iostream>
-#include <windows.h>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
-int main(int argc, char *argv[])
-{
-	int gor, dol;
-	gg:
-	cout<<"Podaj zmienną gora ";
-	cin>>gor;
-	cout<<"Podaj zmienną dol ";
-	cin>>dol;
-	int k=0;
-	int liczba = dol;
-	if(gor<=1 || dol<=1 || gor<=dol) {
-	cout<<"\nwpisz ponownie\n\n";goto gg;}
-	for( int i=1;i<=gor;i++){
-		for( int j=2;j<=sqrt(liczba);j++)
-		{
-			if (liczba % j==0)
-			{
-				if(liczba>j)k++;
-			}
-		}
-		if(k==0)cout<<"liczba "<<liczba<<" jest pierwsza\n";
-		if(liczba<gor)liczba++;
-	}
-	
-	return 0;
-	
+int main() {
+    int gor, dol;
+    
+    gg:
+    cout << "Podaj zmienną gora ";
+    cin >> gor;
+    cout << "Podaj zmienną dol ";
+    cin >> dol;
+
+    if (gor <= 1 || dol <= 1 || gor <= dol) {
+        cout << "\nwpisz ponownie\n\n";
+        goto gg;
+    }
+
+    for (int liczba = dol; liczba <= gor; liczba++) {
+        int k = 0;
+        
+        for (int j = 2; j <= sqrt(liczba); j++) {
+            if (liczba % j == 0) {
+                k++;
+                break;  // Dodane, aby przerwać pętlę, gdy znajdzie dzielnik
+            }
+        }
+
+        if (k == 0)
+            cout << "liczba " << liczba << " jest pierwsza\n";
+    }
+
+    return 0;
 }
